@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바다출판사 주요도서 판매·마케팅 리포트 — 2026년 7월</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{--navy:#1f3864;--blue:#2e5496;--amber:#c55a11;--teal:#1f7a6d;--purple:#7030a0;--line:#e3e8f0;--bg:#f5f7fb;--ink:#1a2233;--mut:#6b7688;--up:#548235;--down:#c00000}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Malgun Gothic','맑은 고딕',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding:24px 14px 60px}
+.wrap{max-width:960px;margin:0 auto}
+header{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:8px}
+h1{font-size:23px;color:var(--navy);letter-spacing:-.5px}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.asof{display:inline-block;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px;margin-top:8px}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+h2{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+h2 .bar{width:4px;height:15px;border-radius:2px;display:inline-block}
+.c-ad{color:var(--amber)} .c-sns{color:var(--teal)} .c-top{color:#111}
+.summary{background:linear-gradient(135deg,#eef2fa,#f7f9fd);border-left:4px solid var(--navy)}
+.summary p{font-size:14px;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:600;font-size:12px}
+tbody tr:last-child td{border-bottom:none}
+td.l,th.l{text-align:left}
+td.tot{font-weight:700;color:var(--navy)}
+tr.sum td{background:#eef2fa;font-weight:700}
+tr.sum td.tot{color:var(--amber)}
+.up{color:var(--up);font-weight:600} .down{color:var(--down);font-weight:600}
+.rank{font-weight:700;color:var(--navy);width:34px}
+tr.hot td{background:#fff7ed}
+a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1}
+a.post:hover{color:var(--amber)}
+.mut{color:var(--mut);font-size:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.grid2{grid-template-columns:1fr}h1{font-size:19px}}
+.foot{text-align:center;color:var(--mut);font-size:12px;margin-top:26px}
+.spark{font-family:monospace;letter-spacing:-1px;color:var(--blue)}
+.big{font-weight:700;color:var(--purple)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>바다출판사 주요도서 판매·마케팅 리포트</h1>
+  <div class="sub">서점 3사(교보·예스24·알라딘) 판매 · Instagram/Meta 마케팅 통합</div>
+  <span class="asof">2026년 7월 · 7/6 기준 (판매 1~6일 누적 · 광고 1~6일)</span>
+</header>
+
+<section class="summary">
+  <h2><span class="bar" style="background:var(--navy)"></span>분석 요약</h2>
+  <p>▸ <b>7/6(월) 판매</b>: 총 <span class="big">105부</span> — NP 35 28 · 저가매수 19 · 퀀텀 15 · 종교 15 · 하늘 14 · 자연 14.</p>
+  <p>▸ <b>7월 누적(1~6일)</b>: NP 35 205 · 저가매수 103 · 퀀텀 71 · 하늘 60 · 자연 60 · 종교 59부 (6종 558).</p>
+  <p>▸ <b>주요도서 외</b>: 스켑틱 46호 71 · 명랑한 은둔자 46 · 예술이란 무엇인가 33부.</p>
+  <p>▸ <b>광고효율</b>(7/6 누적): <b>NP 35 CPB 775원</b> — 알라딘 광고(NP35_기본_알라딘)가 판매를 견인. 저가 2,816 · 자연 2,016원.</p>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:var(--blue)"></span>일별 추이 <span class="mut">(3사 합산 · 7/1~7/6)</span></h2>
+  <div style="position:relative;height:300px;margin-bottom:14px"><canvas id="dailyChart"></canvas></div>
+  <table>
+    <thead><tr><th class="l">도서명</th><th>7/1</th><th>7/2</th><th>7/3</th><th>7/4</th><th>7/5</th><th>7/6</th><th>누적</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td class="l">NP 35</td><td>14</td><td>29</td><td>75</td><td>33</td><td>26</td><td>28</td><td class="tot">205</td></tr>
+      <tr><td class="l">저가매수(개정)</td><td>18</td><td>17</td><td>22</td><td>15</td><td>12</td><td>19</td><td class="tot">103</td></tr>
+      <tr><td class="l">퀀텀 2.0</td><td>16</td><td>11</td><td>18</td><td>8</td><td>3</td><td>15</td><td class="tot">71</td></tr>
+      <tr><td class="l">하늘과 바람과 별과 인간</td><td>7</td><td>24</td><td>8</td><td>3</td><td>4</td><td>14</td><td class="tot">60</td></tr>
+      <tr><td class="l">자연 본능</td><td>14</td><td>11</td><td>16</td><td>1</td><td>4</td><td>14</td><td class="tot">60</td></tr>
+      <tr><td class="l">종교를 실험하다</td><td>12</td><td>11</td><td>11</td><td>4</td><td>6</td><td>15</td><td class="tot">59</td></tr>
+      <tr class="sum"><td class="l">일계</td><td>81</td><td>103</td><td>150</td><td>64</td><td>55</td><td>105</td><td class="tot">558</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:var(--blue)"></span>주간 추이 <span class="mut">(3사 합산 · 주별 누적)</span></h2>
+  <table>
+    <thead><tr><th class="l">도서명</th><th>1주(7/1~7)</th><th>2주(8~14)</th><th>3주(15~21)</th><th>4주(22~28)</th><th>5주(29~)</th><th>합계</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td class="l">NP 35</td><td>205</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">205</td></tr>
+      <tr><td class="l">저가매수(개정)</td><td>103</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">103</td></tr>
+      <tr><td class="l">퀀텀 2.0</td><td>71</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">71</td></tr>
+      <tr><td class="l">하늘과 바람과 별과 인간</td><td>60</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">60</td></tr>
+      <tr><td class="l">자연 본능</td><td>60</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">60</td></tr>
+      <tr><td class="l">종교를 실험하다</td><td>59</td><td>–</td><td>–</td><td>–</td><td>–</td><td class="tot">59</td></tr>
+    </tbody>
+  </table>
+  <p class="mut" style="margin-top:8px">※ 7/1~6은 1주차에 해당 · 2주차 이후는 취합되면 자동 채워집니다.</p>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:var(--navy)"></span>월간 추이 <span class="mut">(월별 실판매, 7월=1~6일 누적)</span></h2>
+  <table>
+    <thead><tr><th class="l">도서명</th><th>7월</th><th>6월</th><th>5월</th><th>4월</th><th>추이(4→7월)</th></tr></thead>
+    <tbody>
+      <tr><td class="l">NP 35</td><td class="tot">205</td><td>–</td><td>–</td><td>–</td><td class="spark">▁▁▁█</td></tr>
+      <tr><td class="l">퀀텀 2.0</td><td class="tot">71</td><td>565</td><td>787</td><td>–</td><td class="spark">▁█▆▂</td></tr>
+      <tr><td class="l">하늘과 바람과 별과 인간</td><td class="tot">60</td><td>275</td><td>280</td><td>320</td><td class="spark">█▇▇▂</td></tr>
+      <tr><td class="l">자연 본능</td><td class="tot">60</td><td>138</td><td>–</td><td>–</td><td class="spark">▁▁█▄</td></tr>
+      <tr><td class="l">종교를 실험하다</td><td class="tot">59</td><td>215</td><td>–</td><td>–</td><td class="spark">▁▁█▃</td></tr>
+      <tr><td class="l">저가매수(개정)</td><td class="tot">103</td><td>–</td><td>–</td><td>–</td><td class="spark">▁▁▁█</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="grid2">
+<section>
+  <h2><span class="bar" style="background:var(--amber)"></span><span class="c-ad">도서별 광고·판매 효율</span> <span class="mut">(7/6 누적)</span></h2>
+  <table>
+    <thead><tr><th class="l">도서</th><th>판매</th><th>광고비</th><th>CPB</th><th>LPV</th><th>CPA</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td class="l">NP 35</td><td>205</td><td>158,883</td><td class="up">775</td><td>558</td><td>285</td></tr>
+      <tr><td class="l">자연 본능</td><td>60</td><td>120,972</td><td>2,016</td><td>405</td><td>299</td></tr>
+      <tr><td class="l">저가매수(개정)</td><td>103</td><td>290,003</td><td>2,816</td><td>892</td><td>325</td></tr>
+    </tbody>
+  </table>
+  <p class="mut" style="margin-top:8px">CPB=판매 1부당 광고비(원) · CPA=전환 1건당 광고비(원)</p>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:var(--amber)"></span><span class="c-ad">주간 광고 누적</span> <span class="mut">(캠페인별)</span></h2>
+  <table>
+    <thead><tr><th class="l">캠페인</th><th>광고비</th><th>전환(LPV)</th></tr></thead>
+    <tbody>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaUpYqcCf3z/" target="_blank">NP35_기본_알라딘</a></td><td>158,883</td><td>558</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaOyrTJiAXQ/" target="_blank">저가매수_개정_1차</a></td><td>290,003</td><td>892</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaPO1mbjCBx/" target="_blank">자연본능_4차_교보</a></td><td>120,972</td><td>405</td></tr>
+      <tr class="sum"><td class="l">합계</td><td class="tot">569,858</td><td class="tot">1,855</td></tr>
+    </tbody>
+  </table>
+</section>
+</div>
+
+<section>
+  <h2><span class="bar" style="background:var(--teal)"></span><span class="c-sns">채널별 팔로워</span> <span class="mut">(월 기준 · 기준일 7/6, 확정은 월말)</span></h2>
+  <table>
+    <thead><tr><th class="l">채널</th><th>6월말</th><th>7/6</th><th>증감</th></tr></thead>
+    <tbody>
+      <tr><td class="l">바다출판사</td><td>8,764</td><td>8,760</td><td class="down">▼4</td></tr>
+      <tr><td class="l">뉴필로소퍼</td><td>10,221</td><td>10,253</td><td class="up">▲32</td></tr>
+      <tr><td class="l">스켑틱</td><td>3,001</td><td>3,003</td><td class="up">▲2</td></tr>
+      <tr class="sum"><td class="l">합계</td><td class="tot">21,986</td><td class="tot">22,016</td><td class="tot up">▲30</td></tr>
+    </tbody>
+  </table>
+  <p class="mut" style="margin-top:8px">※ 팔로워는 일 변동이 작아 월말 확정 집계 · 위는 기준일 스냅샷.</p>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:var(--teal)"></span><span class="c-sns">7월 SNS 게시물</span> <span class="mut">(제목 클릭 시 게시물 열림)</span></h2>
+  <table>
+    <thead><tr><th class="l">제목</th><th>게시일</th><th>채널</th><th>도달</th><th>노출</th><th>좋아요</th><th>저장</th><th>공유</th><th>참여</th><th>참여율</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td class="l"><a class="post" href="https://www.instagram.com/p/DaUpYqcCf3z/" target="_blank">깨달음은 언제나 늦게 온다! (뉴필 Vol 35)</a></td><td>07/03</td><td>뉴필로소퍼</td><td>1,404</td><td>3,426</td><td>92</td><td>26</td><td>7</td><td class="tot">125</td><td>3.6%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaPO1mbjCBx/" target="_blank">스스로를 편집하며, 내밀한 자아까지</a></td><td>07/01</td><td>뉴필로소퍼</td><td>1,335</td><td>3,500</td><td>85</td><td>13</td><td>5</td><td class="tot">103</td><td>2.9%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaWhFLHCIM8/" target="_blank">요즘 세상은 예전 같지 않아</a></td><td>07/04</td><td>스켑틱</td><td>316</td><td>753</td><td>22</td><td>7</td><td>1</td><td class="tot">30</td><td>4.0%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaUotB9mlBd/" target="_blank">깨달음은 언제나 늦게 온다! (뉴필 Vol 35)</a></td><td>07/03</td><td>바다출판사</td><td>420</td><td>1,074</td><td>33</td><td>5</td><td>2</td><td class="tot">40</td><td>3.7%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaWhBn7FzRe/" target="_blank">요즘 세상은 예전 같지 않아</a></td><td>07/04</td><td>바다출판사</td><td>539</td><td>1,287</td><td>33</td><td>2</td><td>2</td><td class="tot">37</td><td>2.9%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaRXYZPl0Om/" target="_blank">행운은 통제할수록 멀어진다</a></td><td>07/02</td><td>뉴필로소퍼</td><td>320</td><td>854</td><td>31</td><td>10</td><td>2</td><td class="tot">43</td><td>5.0%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaOyrTJiAXQ/" target="_blank">싱잉볼 소리, 들으면 정말 편안하죠</a></td><td>07/01</td><td>스켑틱</td><td>329</td><td>850</td><td>18</td><td>9</td><td>2</td><td class="tot">29</td><td>3.4%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaPOt1UiX7t/" target="_blank">스스로를 편집하며, 내밀한 자아까지</a></td><td>07/01</td><td>바다출판사</td><td>486</td><td>1,117</td><td>30</td><td>6</td><td>3</td><td class="tot">39</td><td>3.5%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaOynPkF-D8/" target="_blank">싱잉볼 소리, 들으면 정말 편안하죠</a></td><td>07/01</td><td>바다출판사</td><td>511</td><td>1,239</td><td>22</td><td>3</td><td>5</td><td class="tot">30</td><td>2.4%</td></tr>
+      <tr><td class="l"><a class="post" href="https://www.instagram.com/p/DaRXZ2Gl4-x/" target="_blank">행운은 통제할수록 멀어진다</a></td><td>07/02</td><td>바다출판사</td><td>64</td><td>132</td><td>7</td><td>2</td><td>0</td><td class="tot">9</td><td>6.8%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="bar" style="background:#111"></span><span class="c-top">주요도서 외 판매 TOP10</span> <span class="mut">(7월 누적 1~6일 · 3사 합산)</span></h2>
+  <table>
+    <thead><tr><th class="rank">#</th><th class="l">도서명</th><th>교보</th><th>예스</th><th>알라딘</th><th>합계</th></tr></thead>
+    <tbody>
+      <tr class="hot"><td class="rank">1</td><td class="l">스켑틱 46호</td><td>30</td><td>7</td><td>34</td><td class="tot">71</td></tr>
+      <tr class="hot"><td class="rank">2</td><td class="l">명랑한 은둔자</td><td>23</td><td>13</td><td>10</td><td class="tot">46</td></tr>
+      <tr><td class="rank">3</td><td class="l">예술이란 무엇인가</td><td>22</td><td>1</td><td>10</td><td class="tot">33</td></tr>
+      <tr><td class="rank">4</td><td class="l">심플하게 산다</td><td>9</td><td>13</td><td>10</td><td class="tot">32</td></tr>
+      <tr><td class="rank">5</td><td class="l">침팬지 폴리틱스</td><td>17</td><td>7</td><td>8</td><td class="tot">32</td></tr>
+      <tr><td class="rank">6</td><td class="l">갈매기에게 나는 법을 가르쳐준 고양이</td><td>6</td><td>17</td><td>6</td><td class="tot">29</td></tr>
+      <tr><td class="rank">7</td><td class="l">아무도 지켜보지 않지만 모두가 공연을 한다</td><td>11</td><td>5</td><td>8</td><td class="tot">24</td></tr>
+      <tr><td class="rank">8</td><td class="l">신약의 전쟁</td><td>14</td><td>5</td><td>2</td><td class="tot">21</td></tr>
+      <tr><td class="rank">9</td><td class="l">뉴필로소퍼 34호</td><td>0</td><td>7</td><td>14</td><td class="tot">21</td></tr>
+      <tr><td class="rank">10</td><td class="l">로켓랩</td><td>16</td><td>2</td><td>2</td><td class="tot">20</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="foot">바다출판사 콘텐츠 기획팀 · 데이터 소스: 서점 3사 SCM/공급사 + Windsor.ai(Instagram·Meta) · 갱신 2026-07-07</div>
+</div>
+<script>
+(function(){
+  if(typeof Chart==='undefined')return;
+  var el=document.getElementById('dailyChart');if(!el)return;
+  var mk=function(label,data,color){return{label:label,data:data,borderColor:color,backgroundColor:color,tension:.3,borderWidth:2,pointRadius:3,pointHoverRadius:5};};
+  new Chart(el,{type:'line',
+    data:{labels:['7/1','7/2','7/3','7/4','7/5','7/6'],datasets:[
+      mk('NP 35',[14,29,75,33,26,28],'#c00000'),
+      mk('저가매수(개정)',[18,17,22,15,12,19],'#548235'),
+      mk('퀀텀 2.0',[16,11,18,8,3,15],'#c55a11'),
+      mk('하늘과 바람과 별과 인간',[7,24,8,3,4,14],'#1f3864'),
+      mk('자연 본능',[14,11,16,1,4,14],'#1f7a6d'),
+      mk('종교를 실험하다',[12,11,11,4,6,15],'#7030a0')
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},
+      scales:{y:{beginAtZero:true,title:{display:true,text:'판매(부)'}}}}
+  });
+})();
+</script>
+</body>
+</html>
