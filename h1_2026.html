@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바다출판사 · 2026 상반기 결산 보고</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{color-scheme:light;--navy:#1f3864;--blue:#2e5496;--amber:#c55a11;--teal:#1f7a6d;--purple:#7030a0;--line:#e3e8f0;--bg:#f5f7fb;--ink:#1a2233;--mut:#6b7688;--up:#548235;--down:#c00000}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Malgun Gothic','맑은 고딕',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding:24px 14px 60px}
+.wrap{max-width:980px;margin:0 auto}
+header{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:8px}
+h1{font-size:24px;color:var(--navy);letter-spacing:-.5px}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.asof{display:inline-block;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px;margin-top:8px}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+h2{font-size:15.5px;margin-bottom:12px;display:flex;align-items:center;gap:7px;color:var(--navy)}
+h2 .bar{width:4px;height:15px;border-radius:2px;display:inline-block}
+.summary{background:linear-gradient(135deg,#eef2fa,#f7f9fd);border-left:4px solid var(--navy)}
+.summary p{font-size:13.5px;margin:7px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:600;font-size:12px}
+tbody tr:last-child td{border-bottom:none}
+td.l,th.l{text-align:left}
+td.tot{font-weight:700;color:var(--navy)}
+tr.sum td{background:#eef2fa;font-weight:700}
+tr.hot td{background:#fff7ed}
+.up{color:var(--up);font-weight:600}.down{color:var(--down);font-weight:600}
+.rank{font-weight:700;color:var(--navy);width:30px}
+.mut{color:var(--mut);font-size:12px}
+a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1}
+a.post:hover{color:var(--amber)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+h3{font-size:12.5px;color:var(--blue);margin:14px 0 6px}
+.chgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+.chbox{border:1px solid var(--line);border-radius:9px;padding:8px 4px 4px;background:#fbfcfe;min-width:0;overflow:hidden}
+.chtitle{font-size:11px;color:var(--navy);text-align:center;margin-bottom:5px;font-weight:700}
+.kpi th.gA{background:#2e5bff}.kpi th.gB{background:#2e7d5b}.kpi th.gC{background:#5a6273}
+.kpi td.cA{background:#eef3fc}.kpi td.cB{background:#e9f4ee}.kpi td.cC{background:#f6f7f9}
+.kpi tbody tr.sum td{border-top:2px solid #cdd4df}
+.eff-lo{color:var(--up);font-weight:700}.eff-hi{color:var(--down);font-weight:700}
+.q2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.qb{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fbfcfe}
+.qb .h{font-size:12px;font-weight:700;color:#fff;display:inline-block;padding:2px 10px;border-radius:5px;margin-bottom:6px}
+.qb p{font-size:12.5px}
+.read{background:#faf8fd;border:1px solid #e6ddf2;border-left:4px solid var(--purple);border-radius:0 10px 10px 0;padding:13px 16px;margin-top:14px;font-size:12.7px;line-height:1.65}
+.read .rt{font-weight:800;color:var(--purple);display:block;margin-bottom:5px}
+.read b{color:var(--navy)}
+.read p{margin:5px 0}
+.foot{text-align:center;color:var(--mut);font-size:12px;margin-top:26px}
+@media(max-width:760px){.chgrid{grid-template-columns:repeat(3,1fr)}.grid2,.q2{grid-template-columns:1fr}h1{font-size:20px}}
+</style></head><body><div class="wrap">
+<header><h1>📊 2026 상반기 결산 보고</h1>
+<div class="sub">바다출판사 · 뉴필로소퍼 · 스켑틱 &nbsp;|&nbsp; 팔로워 · 정기구독 · 도서 판매 · 광고 효율 · 콘텐츠</div>
+<span class="asof">2026년 상반기 (1.1~6.30) · 판매=서점3사 월별 SCM · 광고=Meta 실측 · 작성 7/13</span></header>
+
+<section class="summary"><h2><span class="bar" style="background:var(--navy)"></span>상반기 인사이트</h2>
+<p>📈 <b>팔로워</b> — 3채널 합 20,236 → <b>21,987명</b>(+1,751). 뉴필로소퍼가 9,236→10,227(<b class="up">+991, +10.7%</b>)로 견인, 6월 한 달 +858 급증.</p>
+<p>👥 <b>정기구독</b> — 뉴필 990→<b>2,283명</b>(<b class="up">+1,293, 2.3배</b>), 스켑틱 1,044→1,253(+209). 텀블벅·와디즈 펀딩과 유튜버·배우 김향기·타 채널 소개 이슈로 구독 기반을 크게 키웠습니다.</p>
+<p>📚 <b>도서 판매</b> — 광고 집행 도서 <b>16,087부</b>(3사). 상반기 1위 뉴필 34호 1,769부(유튜브 바이럴), 스테디셀러 하늘 1,657부, 신약의 전쟁 1,564부.</p>
+<p>🎯 <b>광고 효율</b> — Meta 광고비 <b>1,973만원</b>(4월 561만 정점). 광고를 가장 많이 쓴 로켓랩(411만)·허공(207만)은 CPB 3,000원대로 <b>효율이 낮았고</b>, 반대로 NP34는 39만원만 쓰고 1,769부(<b class="up">CPB 218원</b>) — <b>광고비 크기 ≠ 효율</b>. 잡지·백리스트(NP34·NP33·예술)가 신간 단행본보다 광고 효율이 높았습니다.</p>
+<p>💡 <b>콘텐츠</b> — 바다는 <b>124건 다작이나 도달은 낮고</b> 바이럴 1건('자연은 성을 둘로' 도달 30,599·공유 738)에 의존. 뉴필은 <b>26건 소수정예로 도달·저장 최고</b>(저장 150+). 판매 1위 NP34와 콘텐츠 반응 1위가 일치 — 뉴필에서 <b>콘텐츠→판매 선순환</b>이 작동합니다.</p>
+<p>🔀 <b>조직 전환</b> — <b>4월 홍보팀→기획콘텐츠팀</b> 전환이 변곡점. 1분기(펀딩·구독 중심)와 2분기(신간 리테일·콘텐츠 본격화)의 성격이 뚜렷이 갈립니다.</p></section>
+
+<section><h2><span class="bar" style="background:var(--navy)"></span>채널별 핵심 지표 <span class="mut">(1월 → 6월 성장)</span></h2>
+<table class="kpi"><thead><tr><th class="l">채널</th><th class="gA">팔로워 1월</th><th class="gA">6월</th><th class="gA">증감</th><th class="gB">구독 1월</th><th class="gB">6월</th><th class="gB">증감</th><th class="gC">게시물</th><th class="gC">광고비(H1)</th><th class="gC">참여율</th></tr></thead>
+<tbody>
+<tr><td class="l">바다출판사</td><td class="cA">8,185</td><td class="cA">8,759</td><td class="cA up">+7.0%</td><td class="cB">–</td><td class="cB">–</td><td class="cB">–</td><td class="cC">124</td><td class="cC">15,284,584</td><td class="cC">4.7%</td></tr>
+<tr><td class="l">뉴필로소퍼</td><td class="cA">9,236</td><td class="cA">10,227</td><td class="cA up">+10.7%</td><td class="cB">990</td><td class="cB">2,283</td><td class="cB up">+131%</td><td class="cC">26</td><td class="cC">2,447,330</td><td class="cC">4.3%</td></tr>
+<tr><td class="l">스켑틱</td><td class="cA">2,815</td><td class="cA">3,001</td><td class="cA up">+6.6%</td><td class="cB">1,044</td><td class="cB">1,253</td><td class="cB up">+20%</td><td class="cC">12</td><td class="cC">1,998,483</td><td class="cC">3.1%</td></tr>
+<tr class="sum"><td class="l">합계</td><td class="cA">20,236</td><td class="cA tot">21,987</td><td class="cA up">+8.7%</td><td class="cB">2,034</td><td class="cB tot">3,536</td><td class="cB up">+74%</td><td class="cC tot">162</td><td class="cC tot">19,730,397</td><td class="cC">4.0%</td></tr>
+</tbody></table>
+<div class="chgrid">
+<div class="chbox"><div class="chtitle">팔로워 1월→6월</div><div style="position:relative;height:150px"><canvas id="mkF"></canvas></div></div>
+<div class="chbox"><div class="chtitle">정기구독 1월→6월</div><div style="position:relative;height:150px"><canvas id="mkS"></canvas></div></div>
+<div class="chbox"><div class="chtitle">게시물 수(상반기)</div><div style="position:relative;height:150px"><canvas id="mkP"></canvas></div></div>
+<div class="chbox"><div class="chtitle">상반기 광고비(만원)</div><div style="position:relative;height:150px"><canvas id="mkA"></canvas></div></div>
+<div class="chbox"><div class="chtitle">대표 참여율</div><div style="position:relative;height:150px"><canvas id="mkE"></canvas></div></div>
+</div></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>Meta 광고비 3개년 <span class="mut">(상반기 1~6월 비교)</span></h2>
+<div class="grid2" style="align-items:center">
+<div style="position:relative;height:210px"><canvas id="ad3y"></canvas></div>
+<div>
+<table><thead><tr><th class="l">연도(상반기)</th><th>광고비</th><th>전년대비</th></tr></thead><tbody>
+<tr><td class="l">2024 상반기</td><td>2,308만</td><td class="mut">–</td></tr>
+<tr><td class="l">2025 상반기</td><td>1,293만</td><td class="down">−44%</td></tr>
+<tr class="sum"><td class="l">2026 상반기</td><td class="tot">1,973만</td><td class="up">+53%</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:8px">2025년 상반기 축소 후 <b>2026년 상반기 광고를 다시 확대</b>(+53%). 4월 로켓랩 교보펀딩·2분기 신간 런칭에 집중 집행했습니다.</p>
+</div></div></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>도서 판매 추이 <span class="mut">(서점3사 SCM · 상반기 판매 TOP10)</span></h2>
+<div style="position:relative;height:320px"><canvas id="trend"></canvas></div>
+<table style="margin-top:14px"><thead><tr><th class="rank">#</th><th class="l">도서</th><th>1월</th><th>2월</th><th>3월</th><th>4월</th><th>5월</th><th>6월</th><th>합계</th></tr></thead><tbody>
+<tr class="hot"><td class="rank">1</td><td class="l">뉴필로소퍼 34호</td><td>–</td><td>–</td><td>–</td><td>375</td><td>976</td><td>418</td><td class="tot">1,769</td></tr>
+<tr><td class="rank">2</td><td class="l">하늘과 바람과 별과 인간</td><td>233</td><td>207</td><td>257</td><td>343</td><td>334</td><td>283</td><td class="tot">1,657</td></tr>
+<tr><td class="rank">3</td><td class="l">신약의 전쟁</td><td>–</td><td>–</td><td>5</td><td>788</td><td>451</td><td>320</td><td class="tot">1,564</td></tr>
+<tr><td class="rank">4</td><td class="l">뉴필로소퍼 33호</td><td>389</td><td>191</td><td>350</td><td>83</td><td>345</td><td>168</td><td class="tot">1,526</td></tr>
+<tr><td class="rank">5</td><td class="l">퀀텀 2.0</td><td>–</td><td>–</td><td>–</td><td>–</td><td>789</td><td>565</td><td class="tot">1,354</td></tr>
+<tr><td class="rank">6</td><td class="l">로켓랩</td><td>–</td><td>–</td><td>22</td><td>346</td><td>441</td><td>306</td><td class="tot">1,115</td></tr>
+<tr><td class="rank">7</td><td class="l">생각이란 무엇인가</td><td>230</td><td>395</td><td>182</td><td>128</td><td>75</td><td>69</td><td class="tot">1,079</td></tr>
+<tr><td class="rank">8</td><td class="l">이런 과학 처음이야</td><td>112</td><td>299</td><td>246</td><td>124</td><td>78</td><td>27</td><td class="tot">886</td></tr>
+<tr><td class="rank">9</td><td class="l">예술이란 무엇인가</td><td>66</td><td>82</td><td>155</td><td>159</td><td>94</td><td>197</td><td class="tot">753</td></tr>
+<tr><td class="rank">10</td><td class="l">윌듀런트 철학이야기</td><td>–</td><td>–</td><td>194</td><td>337</td><td>135</td><td>79</td><td class="tot">745</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:8px">※ 판매=서점3사 월별 SCM 마감(교보 4채널 합). 잡지는 예스·알라딘 호별+교보 월합계(당월호 귀속). 로켓랩은 교보 펀딩분 포함.</p></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>도서별 판매·광고 효율 <span class="mut">(상반기 · CPB=광고비÷판매)</span></h2>
+<table><thead><tr><th class="l">도서</th><th>Meta 광고비</th><th>3사 판매(부)</th><th>CPB(원/부)</th><th>비고</th></tr></thead><tbody>
+<tr><td class="l">저가 매수의 기술</td><td>28,030</td><td>434</td><td class="eff-lo">65</td><td class="mut">상반기 광고 소액(7월 본격)</td></tr>
+<tr class="hot"><td class="l">뉴필로소퍼 34호</td><td>386,213</td><td>1,769</td><td class="eff-lo">218</td><td class="mut">유튜브 바이럴</td></tr>
+<tr class="hot"><td class="l">예술이란 무엇인가</td><td>324,989</td><td>753</td><td class="eff-lo">432</td><td></td></tr>
+<tr><td class="l">뉴필로소퍼 33호</td><td>1,098,330</td><td>1,526</td><td class="eff-lo">720</td><td class="mut">텀블벅 병행</td></tr>
+<tr><td class="l">생각이란 무엇인가</td><td>828,035</td><td>1,079</td><td class="eff-lo">767</td><td></td></tr>
+<tr><td class="l">이런 과학 처음이야</td><td>742,668</td><td>886</td><td class="eff-lo">838</td><td></td></tr>
+<tr><td class="l">자연은 성을 둘로</td><td>238,233</td><td>264</td><td class="eff-lo">902</td><td></td></tr>
+<tr><td class="l">총정리 물리의 법칙</td><td>530,930</td><td>588</td><td class="eff-lo">903</td><td></td></tr>
+<tr><td class="l">신약의 전쟁</td><td>1,479,763</td><td>1,564</td><td class="eff-lo">946</td><td>언론 서평</td></tr>
+<tr><td class="l">퀀텀 2.0</td><td>1,619,001</td><td>1,354</td><td>1,196</td><td>언론 서평</td></tr>
+<tr><td class="l">윌듀런트 철학이야기</td><td>898,395</td><td>745</td><td>1,206</td><td class="mut">북펀드 병행</td></tr>
+<tr><td class="l">스켑틱 45호</td><td>1,019,202</td><td>640</td><td>1,593</td><td class="mut">와디즈 병행</td></tr>
+<tr><td class="l">나의 부엌(개정)</td><td>323,247</td><td>172</td><td>1,879</td><td></td></tr>
+<tr><td class="l">세인트존스 고전100권</td><td>343,224</td><td>156</td><td>2,200</td><td></td></tr>
+<tr><td class="l">스켑틱 46호</td><td>979,281</td><td>314</td><td class="eff-hi">3,119</td><td></td></tr>
+<tr><td class="l">허공에 안착하기</td><td>2,072,858</td><td>596</td><td class="eff-hi">3,478</td><td></td></tr>
+<tr><td class="l">자연 본능</td><td>483,895</td><td>139</td><td class="eff-hi">3,481</td><td></td></tr>
+<tr><td class="l">로켓랩</td><td>4,111,237</td><td>1,115</td><td class="eff-hi">3,687</td><td class="mut">교보펀딩 병행</td></tr>
+<tr><td class="l">종교를 실험하다</td><td>816,344</td><td>220</td><td class="eff-hi">3,711</td><td></td></tr>
+<tr><td class="l">이해할 수 없는 아픔은 없다</td><td>443,735</td><td>116</td><td class="eff-hi">3,825</td><td></td></tr>
+<tr class="sum"><td class="l">뉴필 정기구독(김향기)</td><td>962,787</td><td>–</td><td>–</td><td class="mut">구독 전환 캠페인</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:8px">상반기 Meta 광고를 집행한 <b>도서 전체(21종)</b>를 CPB 낮은 순으로 정리. CPB=Meta 광고비÷3사 리테일 판매(<span style="color:var(--up)">초록=1,000원 미만 효율</span>·<span style="color:var(--down)">빨강=2,500원 초과</span>). 6월 신간(SK46·자연·종교)은 출간 직후라 높으나 하반기 정상화 예상. 펀딩·구독 병행 도서(로켓랩·NP33·SK45·윌듀런트)와 정기구독 캠페인은 판매 외 성과가 별도로 있어 CPB만으로 평가하기 어렵습니다.</p>
+<div class="read"><span class="rt">📖 CPB 이렇게 읽으세요</span>
+<p><b>① CPB = 판매 1부를 만드는 데 든 광고비.</b> 낮을수록 광고가 잘 먹혔다는 뜻입니다. 대략 <b class="up">1,000원 미만이면 효율적</b>, <b class="down">3,000원을 넘으면 재점검</b> 신호로 보시면 됩니다.</p>
+<p><b>② 광고비를 많이 썼다고 효율이 좋은 건 아닙니다.</b> 로켓랩(411만)·허공(207만)에 가장 많이 태웠지만 CPB는 3,500~3,700원대. 반대로 NP34는 39만원으로 1,769부 — 콘텐츠(유튜브 바이럴)가 판매를 끌어 광고가 거의 안 든 케이스입니다. <b>이 시너지를 다른 도서에 복제하는 게 핵심.</b></p>
+<p><b>③ 높은 CPB에도 두 종류가 있습니다.</b> 6월 신간(SK46·자연·종교)은 출간 직후라 판매가 아직 안 쌓여 <b>일시적으로</b> 높은 것 → 하반기 정상화 예상. 반면 허공·아픔은 신간이 아닌데도 높아 <b>소재·타깃을 점검</b>하거나 예산을 줄일 후보입니다.</p>
+<p><b>④ 펀딩·구독 병행 도서는 CPB만 보면 오해합니다.</b> 로켓랩은 리테일 CPB 3,687원이지만 교보펀딩으로 393부·2,474만원을 따로 벌었습니다. 광고가 리테일이 아니라 펀딩·구독 쪽으로 기여한 것이죠.</p>
+<p><b>→ 하반기 액션:</b> 효율 좋은 잡지·백리스트(NP·예술) 쪽으로 예산을 더 배분하고, 신간은 출간 초기 CPB를 감안해 판단, 허공·아픔류는 소재 리뉴얼 검토.</p></div></section>
+
+<section><h2><span class="bar" style="background:var(--teal)"></span>정기구독자 추이 <span class="mut">(월말, 명)</span></h2>
+<div style="position:relative;height:210px;margin-bottom:12px"><canvas id="chSub"></canvas></div>
+<table><thead><tr><th class="l">월</th><th>뉴필</th><th>Δ</th><th>스켑틱</th><th>Δ</th></tr></thead><tbody>
+<tr><td class="l">01</td><td>990</td><td class="mut">–</td><td>1,044</td><td class="mut">–</td></tr>
+<tr><td class="l">02</td><td>1,294</td><td class="up">+304</td><td>1,072</td><td class="up">+28</td></tr>
+<tr><td class="l">03</td><td>1,557</td><td class="up">+263</td><td>1,090</td><td class="up">+18</td></tr>
+<tr><td class="l">04</td><td>1,524</td><td class="down">−33</td><td>1,223</td><td class="up">+133</td></tr>
+<tr><td class="l">05</td><td>1,584</td><td class="up">+60</td><td>1,379</td><td class="up">+156</td></tr>
+<tr class="sum"><td class="l">06</td><td class="tot">2,283</td><td class="up">+699</td><td class="tot">1,253</td><td class="down">−126</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:6px">※ 1~5월 채널 수기, 6월 대산 만료호 기준(뉴필≥35·스켑틱≥47)으로 정비 — 기준 혼재. 7월 35호 발행으로 뉴필 현재값은 1,993명 재산정.</p></section>
+
+<section><h2><span class="bar" style="background:var(--teal)"></span>팔로워 추이 <span class="mut">(월말, 명)</span></h2>
+<div style="position:relative;height:210px;margin-bottom:12px"><canvas id="chFollow"></canvas></div>
+<table><thead><tr><th class="l">월</th><th>바다</th><th>뉴필</th><th>스켑틱</th><th>합계</th></tr></thead><tbody>
+<tr><td class="l">01</td><td>8,185</td><td>9,236</td><td>2,815</td><td class="tot">20,236</td></tr>
+<tr><td class="l">03</td><td>8,366</td><td>9,256</td><td>2,952</td><td class="tot">20,574</td></tr>
+<tr><td class="l">04</td><td>8,595</td><td>9,332</td><td>2,943</td><td class="tot">20,870</td></tr>
+<tr><td class="l">05</td><td>8,598</td><td>9,369</td><td>2,942</td><td class="tot">20,909</td></tr>
+<tr class="sum"><td class="l">06</td><td>8,759 <span class="up">+161</span></td><td>10,227 <span class="up">+858</span></td><td>3,001 <span class="up">+59</span></td><td class="tot">21,987</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:6px">※ 2월 스냅샷 결측. 인스타그램 오가닉 기준.</p></section>
+
+<section><h2><span class="bar" style="background:var(--purple)"></span>콘텐츠 TOP — 채널별 <span class="mut">(상반기 · 좋아요+공유+저장 순 · 제목 클릭 시 게시물)</span></h2>
+<h3>▶ 바다출판사</h3>
+<table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th><th>참여율</th></tr></thead><tbody>
+<tr class="hot"><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/DVdG4OUD8V_/" target="_blank">자연은 성을 둘로 나누지 않는다 (바이럴)</a></td><td>30,599</td><td>409</td><td>738</td><td>196</td><td>2.3%</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DVQK4j8j799/" target="_blank">자연은 성을 둘로 나누지 않는다 (예고)</a></td><td>3,319</td><td>136</td><td>78</td><td>58</td><td>4.0%</td></tr>
+<tr><td class="rank">3</td><td class="l"><a class="post" href="https://www.instagram.com/p/DYjXF5cIM6y/" target="_blank">철학은 기분에서 시작된다</a></td><td>2,788</td><td>147</td><td>13</td><td>83</td><td>4.7%</td></tr>
+<tr><td class="rank">4</td><td class="l"><a class="post" href="https://www.instagram.com/p/DUP5l8Bj3Df/" target="_blank">허공에 안착하기 (사진 에세이)</a></td><td>1,828</td><td>145</td><td>11</td><td>42</td><td>4.4%</td></tr>
+<tr><td class="rank">5</td><td class="l"><a class="post" href="https://www.instagram.com/p/DXjBdpQj6N1/" target="_blank">명랑한 은둔자</a></td><td>1,709</td><td>100</td><td>13</td><td>44</td><td>4.0%</td></tr>
+</tbody></table>
+<h3>▶ 뉴필로소퍼</h3>
+<table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th><th>참여율</th></tr></thead><tbody>
+<tr class="hot"><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZcE3N8D4-7/" target="_blank">무지가 곧 힘이다 (카를 융)</a></td><td>5,838</td><td>335</td><td>42</td><td>159</td><td>4.0%</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DYjXb2YnzJM/" target="_blank">철학은 기분에서 시작된다 (33호)</a></td><td>4,616</td><td>271</td><td>25</td><td>158</td><td>4.3%</td></tr>
+<tr><td class="rank">3</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZOawUsD_or/" target="_blank">행복한 시시포스 (카뮈)</a></td><td>4,340</td><td>244</td><td>35</td><td>91</td><td>3.7%</td></tr>
+<tr><td class="rank">4</td><td class="l"><a class="post" href="https://www.instagram.com/p/DTPeOw_E7i-/" target="_blank">뉴필로소퍼 2026 정기구독 (텀블벅)</a></td><td>4,180</td><td>236</td><td>18</td><td>94</td><td>3.6%</td></tr>
+<tr><td class="rank">5</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZuAkKsjV4b/" target="_blank">마음먹기 만능주의 (스토아 철학)</a></td><td>3,269</td><td>177</td><td>19</td><td>62</td><td>3.4%</td></tr>
+</tbody></table>
+<h3>▶ 스켑틱</h3>
+<table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th><th>참여율</th></tr></thead><tbody>
+<tr><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZyeA-QCN-e/" target="_blank">가짜뉴스는 소문이 만든다</a></td><td>530</td><td>33</td><td>3</td><td>14</td><td>3.1%</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DVsTb5YjxNS/" target="_blank">'가짜' 민족주의와 유사역사 (45호)</a></td><td>612</td><td>30</td><td>3</td><td>10</td><td>3.1%</td></tr>
+<tr><td class="rank">3</td><td class="l"><a class="post" href="https://www.instagram.com/p/DWsn4-IjWzm/" target="_blank">AI 시대, 뇌는 안녕한가 (인지적 구두쇠)</a></td><td>660</td><td>25</td><td>8</td><td>9</td><td>2.4%</td></tr>
+<tr><td class="rank">4</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZZOEt0ja9u/" target="_blank">AI를 어떻게 통제할 것인가 (46호)</a></td><td>538</td><td>20</td><td>5</td><td>14</td><td>3.3%</td></tr>
+<tr><td class="rank">5</td><td class="l"><a class="post" href="https://www.instagram.com/p/DZ8xMyKCO3Y/" target="_blank">다크 테트라드 (어둠의 성격)</a></td><td>396</td><td>21</td><td>0</td><td>8</td><td>2.8%</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:8px">※ 참여율=(좋아요+공유+저장+댓글)÷노출. 스켑틱은 오가닉 도달이 낮아(수백대) 광고 중심으로 운영됩니다.</p>
+<div class="read"><span class="rt">📖 콘텐츠 이렇게 읽으세요</span>
+<p><b>① 도달이 크다고 판매로 이어지는 건 아닙니다.</b> 바다 '자연은 성을 둘로'는 도달 30,599·공유 738로 브랜드 인지엔 최고였지만, 정작 판매(성둘 264부)로는 크게 이어지지 않았습니다. 이슈성 주제(성 스펙트럼)는 <b>확산엔 강하지만 전환은 별개</b> — 바이럴은 인지도용, 판매는 다른 설계가 필요합니다.</p>
+<p><b>② '저장'이 충성도의 신호입니다.</b> 뉴필 카드뉴스는 저장이 150건 이상(소장·재방문 의도). 저장이 높은 콘텐츠가 팬덤을 만들고, 실제로 뉴필 34호가 <b>판매 1위</b>이자 콘텐츠 반응 1위 — 콘텐츠→구독→판매 선순환이 뉴필에서 돌고 있습니다.</p>
+<p><b>③ 채널마다 처방이 다릅니다.</b> <b>뉴필</b>(소수 고품질+저장 유도)은 이미 선순환이라 유지·확대. <b>바다</b>(124건 다작)는 바이럴 히트를 판매로 잇는 랜딩·전환 설계가 과제. <b>스켑틱</b>(발행 12건·오가닉 약)은 콘텐츠를 늘리는 것이 광고 의존을 줄이는 열쇠입니다.</p></div></section>
+
+<div class="foot">바다출판사 2026 상반기 결산 보고 · 작성 2026-07-13 · 데이터: 서점3사 SCM · Windsor.ai(Meta·인스타) · 대산(구독)</div>
+</div>
+<script>
+(function(){
+  if(typeof Chart==='undefined')return;
+  Chart.defaults.font.family="'Malgun Gothic',sans-serif";
+  var C3=['#1f3864','#2e5496','#c55a11'];
+  var mk=function(l,d,c,dash){return{label:l,data:d,borderColor:c,backgroundColor:c,tension:.3,borderWidth:2.4,pointRadius:3,spanGaps:true,borderDash:dash||[]};};
+  var L=function(id,labels,ds,ytitle){var e=document.getElementById(id);if(!e)return;
+    new Chart(e,{type:'line',data:{labels:labels,datasets:ds},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},
+        scales:{y:{grid:{color:'#eef2f8'},title:{display:!!ytitle,text:ytitle||''}},x:{grid:{display:false}}}}});};
+
+  // grouped bar: 1월 vs 6월 팔로워
+  function grpBar(id,labels,d1,d6,fmt){
+    var e=document.getElementById(id);if(!e)return;
+    new Chart(e,{type:'bar',data:{labels:labels,datasets:[
+      {label:'1월',data:d1,backgroundColor:'#b9c6dd',borderRadius:3,maxBarThickness:20},
+      {label:'6월',data:d6,backgroundColor:'#1f3864',borderRadius:3,maxBarThickness:20}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:12}},
+        plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,font:{size:9}}},tooltip:{enabled:true}},
+        scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{display:false,beginAtZero:false,grace:'12%'}}}});
+  }
+  grpBar('mkF',['바다','뉴필','스켑틱'],[8185,9236,2815],[8759,10227,3001]);
+  grpBar('mkS',['뉴필','스켑틱'],[990,1044],[2283,1253]);
+
+  function miniBar(id,labels,data,colors,fmt){
+    var e=document.getElementById(id);if(!e)return;
+    new Chart(e,{type:'bar',data:{labels:labels,datasets:[{data:data,backgroundColor:colors,borderRadius:3,maxBarThickness:26}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:16}},
+        plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{display:false,beginAtZero:true,grace:'25%'}}},
+      plugins:[{id:'vl_'+id,afterDatasetsDraw:function(c){var x=c.ctx;c.getDatasetMeta(0).data.forEach(function(b,i){var v=data[i];x.fillStyle='#1a2233';x.font='700 10px "Malgun Gothic",sans-serif';x.textAlign='center';x.fillText(fmt?fmt(v):v.toLocaleString(),b.x,b.y-5);});}}]});
+  }
+  miniBar('mkP',['바다','뉴필','스켑틱'],[124,26,12],C3);
+  miniBar('mkA',['바다','뉴필','스켑틱'],[1528,245,200],C3,function(v){return v+'만';});
+  miniBar('mkE',['바다','뉴필','스켑틱'],[4.7,4.3,3.1],C3,function(v){return v+'%';});
+
+  // Meta 3개년 상반기
+  var e=document.getElementById('ad3y');
+  if(e) new Chart(e,{type:'bar',data:{labels:['2024 상반기','2025 상반기','2026 상반기'],
+    datasets:[{data:[2308,1293,1973],backgroundColor:['#9aa4b5','#9aa4b5','#c55a11'],borderRadius:5,maxBarThickness:60}]},
+    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.raw.toLocaleString()+'만원';}}}},
+      scales:{y:{grid:{color:'#eef2f8'},title:{display:true,text:'만원'}},x:{grid:{display:false}}}}});
+
+  L('trend',['1월','2월','3월','4월','5월','6월'],[
+    mk('뉴필 34호',[null,null,null,375,976,418],'#c55a11'),
+    mk('하늘과 바람과 별과 인간',[233,207,257,343,334,283],'#1f3864'),
+    mk('신약의 전쟁',[null,null,5,788,451,320],'#1f7a6d'),
+    mk('뉴필 33호',[389,191,350,83,345,168],'#5b7fbd'),
+    mk('퀀텀 2.0',[null,null,null,null,789,565],'#7030a0'),
+    mk('로켓랩',[null,null,22,346,441,306],'#c9843f'),
+    mk('생각이란 무엇인가',[230,395,182,128,75,69],'#3fa7d6'),
+    mk('이런 과학 처음이야',[112,299,246,124,78,27],'#4a9e8f'),
+    mk('예술이란 무엇인가',[66,82,155,159,94,197],'#d64550'),
+    mk('윌듀런트 철학이야기',[null,null,194,337,135,79],'#8a8f99')
+  ],'판매 (부)');
+
+  L('chSub',['01','02','03','04','05','06'],[
+    mk('뉴필로소퍼',[990,1294,1557,1524,1584,2283],'#2e5496'),
+    mk('스켑틱',[1044,1072,1090,1223,1379,1253],'#c55a11',[4,3])],'명');
+
+  L('chFollow',['01','03','04','05','06'],[
+    mk('바다',[8185,8366,8595,8598,8759],'#1f3864'),
+    mk('뉴필',[9236,9256,9332,9369,10227],'#2e5496'),
+    mk('스켑틱',[2815,2952,2943,2942,3001],'#c55a11')],'명');
+})();
+</script>
+</body></html>
