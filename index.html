@@ -108,20 +108,30 @@ a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1} a.po
   if(typeof Chart==='undefined')return;
   var el=document.getElementById('dailyChart');if(!el)return;
   var mk=function(label,data,color){return{label:label,data:data,borderColor:color,backgroundColor:color,tension:.3,borderWidth:2,pointRadius:3,pointHoverRadius:5};};
-  new Chart(el,{type:'line',data:{labels:['7/1', '7/2', '7/3', '7/4', '7/5', '7/6', '7/7', '7/8', '7/9', '7/10', '7/11', '7/12'],datasets:[
+  new Chart(el,{type:'line',
+    data:{labels:["7/1", "7/2", "7/3", "7/4", "7/5", "7/6", "7/7", "7/8", "7/9", "7/10", "7/11", "7/12"],datasets:[
       mk('NP 35',[14, 29, 75, 33, 26, 28, 50, 31, 36, 31, 33, 23],'#c00000'),
       mk('저가매수(개정)',[0, 17, 22, 15, 12, 19, 12, 12, 8, 13, 16, 8],'#548235'),
       mk('퀀텀 2.0',[16, 11, 18, 8, 3, 15, 8, 4, 14, 8, 5, 11],'#c55a11'),
       mk('하늘과 바람과 별과 인간',[7, 24, 8, 3, 4, 14, 5, 3, 10, 5, 4, 2],'#1f3864'),
       mk('자연 본능',[14, 11, 16, 1, 4, 14, 10, 11, 7, 9, 3, 4],'#1f7a6d'),
       mk('종교를 실험하다',[12, 11, 11, 4, 6, 15, 9, 10, 12, 12, 1, 3],'#7030a0')
-    ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:true,title:{display:true,text:'판매(부)'}}}});
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},
+      scales:{y:{beginAtZero:true,title:{display:true,text:'판매(부)'}}}}
+  });
   var sc=['#2E7D32','#1565C0','#C62828'];
   var BK=['NP 35','저가매수','퀀텀 2.0','하늘','자연','종교'];
   function sbar(id,k,y,a){var e=document.getElementById(id);if(!e)return;
     new Chart(e,{type:'bar',data:{labels:BK,datasets:[
-      {label:'교보',data:k,backgroundColor:sc[0]},{label:'예스24',data:y,backgroundColor:sc[1]},{label:'알라딘',data:a,backgroundColor:sc[2]}]},
-      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},tooltip:{mode:'index'}},scales:{x:{stacked:true,beginAtZero:true},y:{stacked:true}}});
+      {label:'교보',data:k,backgroundColor:sc[0]},
+      {label:'예스24',data:y,backgroundColor:sc[1]},
+      {label:'알라딘',data:a,backgroundColor:sc[2]}]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},tooltip:{mode:'index'}},
+        scales:{x:{stacked:true,beginAtZero:true},y:{stacked:true}}}});
   }
   sbar('dailyStore',[13, 3, 8, 0, 2, 1],[4, 3, 2, 1, 1, 0],[6, 2, 1, 1, 1, 2]);
   sbar('weekStore',[86, 74, 60, 45, 51, 41],[39, 12, 8, 14, 4, 8],[130, 11, 11, 6, 15, 19]);
