@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<title>기획콘텐츠 주간 보고 — 2026.08</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js"></script>
+<style>
+:root{color-scheme:light;--navy:#1f3864;--blue:#2e5496;--amber:#c55a11;--teal:#1f7a6d;--purple:#7030a0;--line:#e3e8f0;--bg:#f5f7fb;--ink:#1a2233;--mut:#6b7688;--up:#548235;--down:#c00000}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Malgun Gothic','맑은 고딕',-apple-system,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding:24px 14px 60px}
+.wrap{max-width:960px;margin:0 auto}
+header{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:8px}
+h1{font-size:23px;color:var(--navy);letter-spacing:-.5px}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.asof{display:inline-block;background:var(--navy);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px;margin-top:8px}
+section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,40,80,.04)}
+h2{font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:7px;color:var(--navy)}
+h2 .bar{width:4px;height:15px;border-radius:2px;display:inline-block}
+.chgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}
+.chbox{border:1px solid var(--line);border-radius:9px;padding:8px 4px 4px;background:#fbfcfe;min-width:0;overflow:hidden}
+.chtitle{font-size:11px;color:var(--navy);text-align:center;margin-bottom:5px;font-weight:700}
+.summary{background:linear-gradient(135deg,#eef2fa,#f7f9fd);border-left:4px solid var(--navy)}
+.summary p{font-size:13.5px;margin:6px 0}
+.book{background:linear-gradient(135deg,#e9f4ee,#f7fbf9);border-left:4px solid var(--teal)}
+.book p{font-size:13.5px;margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 9px;text-align:center;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:600;font-size:12px}
+tbody tr:last-child td{border-bottom:none}
+td.l,th.l{text-align:left}
+td.tot{font-weight:700;color:var(--navy)}
+tr.sum td{background:#eef2fa;font-weight:700}
+tr.hot td{background:#fff7ed}
+.up{color:var(--up);font-weight:600}.down{color:var(--down);font-weight:600}
+.rank{font-weight:700;color:var(--navy);width:34px}
+.mut{color:var(--mut);font-size:12px}
+a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+h3{font-size:12.5px;color:var(--blue);margin:14px 0 6px}
+.foot{text-align:center;color:var(--mut);font-size:12px;margin-top:26px}
+@media(max-width:760px){.chgrid{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:1fr}h1{font-size:19px}}
+.kpi th.gA{background:#2e5bff}.kpi th.gB{background:#2e7d5b}.kpi th.gC{background:#5a6273}.kpi td.cA{background:#eef3fc}.kpi td.cB{background:#e9f4ee}.kpi td.cC{background:#f6f7f9}.kpi tbody tr.sum td{border-top:2px solid #cdd4df}
+.mkt th.gA{background:#1f3864}.mkt th.gB{background:#c55a11}.mkt th.gC{background:#2e7d6b}.mkt td.cA{background:#eef2fa}.mkt td.cB{background:#fbeadd}.mkt td.cC{background:#e6f4ef}.mkt td.over{background:#fce4e4;color:#c00000;font-weight:700}
+.badge{display:inline-block;font-size:11px;padding:1px 7px;border-radius:10px;font-weight:700}
+.b-red{background:#fde2e2;color:#c00000}.b-amber{background:#fdecd8;color:#b45309}.b-green{background:#e2f2e6;color:#2f7d3a}
+</style></head><body><div class="wrap">
+<header><h1>📊 기획콘텐츠 주간 보고</h1>
+<div class="sub">바다출판사 · 뉴필로소퍼 · 스켑틱</div>
+<span class="asof">2026년 8월 · 기준일 8/2 (주간 7/27~8/2 · 구독·팔로워 8/3 스냅샷)</span></header>
+
+<section class="summary"><h2><span class="bar" style="background:var(--navy)"></span>이번 주 인사이트 (7/27~8/2)</h2>
+<p>📈 <b>팔로워</b> — 합계 <b>22,268명</b> (전월대비 <b class="up">+49</b>). 뉴필로소퍼(+24)·바다(+21) 증가, 스켑틱 +4.</p>
+<p>👥 <b>정기구독</b> — 합계 <b>3,461명</b> (뉴필 2,122 · 스켑틱 1,339). 전월대비 <b class="up">+60</b> (뉴필 +48 · 스켑틱 +12). <span class="mut">8/3 대산 export</span></p>
+<p>📚 <b>도서 판매</b> — <b>주말(금 7/31~일 8/2) 3사 189부</b>: 기후 102 · 지능 64 · 마일로 19 · 하늘 4. 8월 1~2일 누적 105부, 기후 신간이 견인.</p>
+<p>🎯 <b>광고</b> — 8월 광고비 <b>695,651원</b>(신간 2종+마일로 집중). CPB 기후 4,775 · 지능 5,402 · 마일로 9,131원(초기). 7월 마감 광고비 3,052,091원.</p>
+<p>💡 <b>콘텐츠</b> — 주간 최고 반응 뉴필로소퍼 '혼자서도 충분한 사람'(좋아요 160·저장 51·공유 21). 8/1~2 주말 미게시.</p></section>
+
+<section class="book"><h2><span class="bar" style="background:var(--teal)"></span>⭐ 8월 신간·이슈</h2>
+<p>📰 <b>언론</b> — 〈기후로 보는 한국사〉 7/31 경향신문·문화일보·연합뉴스·한국경제 / 8/1 동아일보·뉴시스 보도 → 주말 판매 견인(주말 102부).</p>
+<p>🏆 <b>서점 선정</b> — 〈지능 파산〉 알라딘 편집장의 선택(7/28) · 교보 전자책 부문 오늘의 책(7/31) 연달아 선정.</p>
+<p>🆕 <b>신간</b> — 〈마일로와 환상요금소〉 알라딘 중심 판매(주말 19부), 인플루언서·리뷰어 마케팅 진행 중.</p></section>
+
+<section><h2><span class="bar" style="background:var(--navy)"></span>채널별 핵심 지표 <span class="mut">(구독·팔로워 8/3 · 게시물·광고 주간)</span></h2>
+<table class="kpi"><thead><tr><th class="l">채널</th><th class="gA">팔로워</th><th class="gA">전월대비</th><th class="gB">정기구독자</th><th class="gB">전월대비</th><th class="gC">게시물</th><th class="gC">참여율</th><th class="gC">광고비(원)</th></tr></thead><tbody>
+<tr><td class='l'>바다출판사</td><td class='cA'>8,806</td><td class='cA up'>+21</td><td class='cB'>–</td><td class='cB'>–</td><td class='cC'>13</td><td class='cC'>2.2%</td><td class='cC'>695,651</td></tr>
+<tr><td class='l'>뉴필로소퍼</td><td class='cA'>10,464</td><td class='cA up'>+24</td><td class='cB'>2,122</td><td class='cB up'>+48</td><td class='cC'>3</td><td class='cC'>2.5%</td><td class='cC'>0</td></tr>
+<tr><td class='l'>스켑틱</td><td class='cA'>2,998</td><td class='cA up'>+4</td><td class='cB'>1,339</td><td class='cB up'>+12</td><td class='cC'>2</td><td class='cC'>2.5%</td><td class='cC'>0</td></tr>
+<tr class='sum'><td class='l'>합계/평균</td><td class='cA tot'>22,268</td><td class='cA up'>+49</td><td class='cB tot'>3,461</td><td class='cB up'>+60</td><td class='cC'>18</td><td class='cC'>2.4%</td><td class='cC tot'>695,651</td></tr>
+</tbody></table>
+<div class="chgrid">
+<div class="chbox"><div class="chtitle">팔로워</div><div style="position:relative;height:128px"><canvas id="mkF"></canvas></div></div>
+<div class="chbox"><div class="chtitle">정기구독자</div><div style="position:relative;height:128px"><canvas id="mkS"></canvas></div></div>
+<div class="chbox"><div class="chtitle">게시물 수</div><div style="position:relative;height:128px"><canvas id="mkP"></canvas></div></div>
+<div class="chbox"><div class="chtitle">평균 참여율</div><div style="position:relative;height:128px"><canvas id="mkE"></canvas></div></div>
+<div class="chbox"><div class="chtitle">8월 광고비</div><div style="position:relative;height:128px"><canvas id="mkA"></canvas></div></div>
+</div></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>주요도서 마케팅 예산 플랜 <span class="mut">(발매 후 누적 · 예산=목표부수 기준)</span></h2>
+<table class="mkt"><thead><tr><th class="l">도서</th><th class="gA">목표부수</th><th class="gA">마케팅율</th><th class="gA">예산</th><th class="gB">소진합계</th><th class="gC">남은예산</th><th class="gC">소진율</th><th class="gC">누적판매</th><th class="gC">권당비용</th></tr></thead><tbody>
+<tr><td class='l'>지능 파산</td><td class='cA'>3,000</td><td class='cA'>10%</td><td class='cA'>3,315,000</td><td class='cB'>2,565,862</td><td class='cC'>749,138</td><td class='cC'>77.4%</td><td class='cC'>390</td><td class='cC'>6,579</td></tr>
+<tr><td class='l'>기후로 보는 한국사</td><td class='cA'>3,000</td><td class='cA'>10%</td><td class='cA'>3,861,000</td><td class='cB'>1,606,345</td><td class='cC'>2,254,655</td><td class='cC'>41.6%</td><td class='cC'>158</td><td class='cC'>10,167</td></tr>
+<tr><td class='l'>마일로와 환상요금소</td><td class='cA'>2,000</td><td class='cA'>10%</td><td class='cA'>2,314,000</td><td class='cB'>1,389,883</td><td class='cC'>924,117</td><td class='cC'>60.1%</td><td class='cC'>29</td><td class='cC over'>47,927</td></tr>
+<tr class='sum'><td class='l'>합계</td><td class='cA'>8,000</td><td class='cA'>–</td><td class='cA tot'>9,490,000</td><td class='cB tot'>5,562,090</td><td class='cC'>3,927,910</td><td class='cC'>58.6%</td><td class='cC'>577</td><td class='cC'>9,640</td></tr>
+</tbody></table>
+<div class="grid2" style="margin-top:14px">
+<div><div style="position:relative;height:230px"><canvas id="mkBudget"></canvas></div></div>
+<div><div style="position:relative;height:230px"><canvas id="mkPer"></canvas></div></div>
+</div>
+<p style="font-size:13px;margin-top:12px">🔎 <b>분석</b>: <span class="badge b-green">기후</span> 소진 42%·잔여 225만으로 <b>여력 여유 — 증액 여지</b>. <span class="badge b-amber">지능</span> 77% 소진이나 판매 강세(390부)로 효율적. <span class="badge b-red">마일로</span> 권당 47,927원(공급가 11,570의 4배)·인플루언서·리뷰어 선투자가 아직 판매(29부) 미전환 — <b>신규 집행 보류 후 리뷰 전환 관찰</b> 권장.</p>
+<p class="mut">※ 예산=목표부수×판매가×공급가율(65%)×마케팅율. 소진=문자·서점이벤트·인플루언서·리뷰어+SNS광고 누적. 권당=소진÷누적판매.</p><h3 style="margin-top:16px">소진 내역 상세</h3>
+<table><thead><tr><th class="l">도서</th><th class="l">마케팅 활동</th><th>구분</th><th>금액(원)</th><th class="l">비고</th></tr></thead><tbody>
+<tr><td class="l" rowspan="4">지능 파산</td><td class="l">문자 발송 (SK+NP 독자)</td><td>문자</td><td>647,556</td><td class="l mut">타깃 구독자 발송</td></tr>
+<tr><td class="l">알라딘 이달의 책</td><td>서점이벤트</td><td>500,000</td><td class="l mut">편집장의 선택</td></tr>
+<tr><td class="l">교보 강남 매장</td><td>서점이벤트</td><td>300,000</td><td class="l mut">오프라인 노출</td></tr>
+<tr><td class="l">SNS 광고 (Meta)</td><td>SNS</td><td>1,118,306</td><td class="l mut">7~8월 누적</td></tr>
+<tr class="sum"><td class="l" colspan="3">지능 파산 소계</td><td class="tot">2,565,862</td><td class="l"></td></tr>
+<tr><td class="l" rowspan="3">기후로 보는 한국사</td><td class="l">문자 발송 (SK 독자)</td><td>문자</td><td>380,835</td><td class="l mut">스켑틱 구독자</td></tr>
+<tr><td class="l">교보문고 광화문점 인문분야 연합광고</td><td>서점이벤트</td><td>500,000</td><td class="l mut">오프라인 연합</td></tr>
+<tr><td class="l">SNS 광고 (Meta)</td><td>SNS</td><td>725,510</td><td class="l mut">7~8월 누적</td></tr>
+<tr class="sum"><td class="l" colspan="3">기후로 보는 한국사 소계</td><td class="tot">1,606,345</td><td class="l"></td></tr>
+<tr><td class="l" rowspan="3">마일로와 환상요금소</td><td class="l">예스 인플루언서</td><td>인플루언서</td><td>500,000</td><td class="l mut">예스24 채널</td></tr>
+<tr><td class="l">리뷰어 7건</td><td>리뷰어</td><td>750,000</td><td class="l mut">건당 약 107,000</td></tr>
+<tr><td class="l">SNS 광고 (Meta)</td><td>SNS</td><td>139,883</td><td class="l mut">7~8월 누적</td></tr>
+<tr class="sum"><td class="l" colspan="3">마일로와 환상요금소 소계</td><td class="tot">1,389,883</td><td class="l"></td></tr>
+<tr class="sum"><td class="l" colspan="3">합계</td><td class="tot">5,562,090</td><td class="l"></td></tr>
+</tbody></table></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>주요도서 서점별 판매 <span class="mut">(8월 1~2일 · 3사 합산)</span></h2>
+<div style="position:relative;height:230px"><canvas id="chStore"></canvas></div>
+<p class="mut" style="margin-top:8px">가로 막대 = 3사 합계, 색 구성 = 서점별(교보·예스24·알라딘). ※8/2 교보 미집계.</p></section>
+
+<section><h2><span class="bar" style="background:var(--amber)"></span>도서별 판매·광고 효율 <span class="mut">(8월 1~2일)</span></h2>
+<table><thead><tr><th class="l">도서</th><th>판매(부)</th><th>광고비(원)</th><th>CPB(원/부)</th><th>전환(LPV)</th><th>상태</th></tr></thead>
+<tbody>
+<tr class="hot"><td class="l">기후로 보는 한국사</td><td>66</td><td>315,165</td><td>4,775</td><td>1,901</td><td>진행(언론·주말견인)</td></tr>
+<tr><td class="l">지능 파산</td><td>24</td><td>129,659</td><td>5,402</td><td>1,007</td><td>진행(서점선정)</td></tr>
+<tr><td class="l">마일로와 환상요금소</td><td>13</td><td>118,702</td><td>9,131</td><td>951</td><td>진행(신간)</td></tr>
+<tr><td class="l">하늘과 바람과 별과 인간</td><td>2</td><td>–</td><td>–</td><td>–</td><td>광고 0</td></tr>
+</tbody></table>
+<p class="mut" style="margin-top:8px">CPB=판매 1부당 광고비(낮을수록 효율↑). 8월 초 2일 기준이라 CPB는 향후 하락 예상.</p></section>
+
+<section><h2><span class="bar" style="background:var(--teal)"></span>정기구독자 추이 <span class="mut">(전월/전주 대비)</span></h2>
+<div style="position:relative;height:210px;margin-bottom:14px"><canvas id="chSub"></canvas></div>
+<div class="grid2">
+<div><h3>월별 (2026)</h3><table><thead><tr><th class="l">월</th><th>뉴필</th><th>Δ</th><th>스켑틱</th><th>Δ</th></tr></thead><tbody>
+<tr><td class="l">04</td><td>1,524</td><td class="down">−33</td><td>1,223</td><td class="up">+133</td></tr>
+<tr><td class="l">05</td><td>1,584</td><td class="up">+60</td><td>1,379</td><td class="up">+156</td></tr>
+<tr><td class="l">06</td><td>1,993</td><td class="up">+409</td><td>1,259</td><td class="down">−120</td></tr>
+<tr><td class="l">07</td><td>2,074</td><td class="up">+81</td><td>1,327</td><td class="up">+68</td></tr>
+<tr class="sum"><td class="l">08(2일)</td><td class="tot">2,122</td><td class="up">+48</td><td class="tot">1,339</td><td class="up">+12</td></tr></tbody></table></div>
+<div><h3>주별 (월~일)</h3><table><thead><tr><th class="l">주</th><th>뉴필</th><th>Δ</th><th>스켑틱</th><th>Δ</th></tr></thead><tbody>
+<tr><td class="l">07-06</td><td>1,993</td><td class="mut">0</td><td>1,259</td><td class="mut">0</td></tr>
+<tr><td class="l">07-13</td><td>2,067</td><td class="up">+74</td><td>1,304</td><td class="up">+45</td></tr>
+<tr class="sum"><td class="l">07-27</td><td class="tot">2,122</td><td class="up">+55</td><td class="tot">1,339</td><td class="up">+35</td></tr></tbody></table>
+<p class="mut" style="margin-top:6px">※ 대산 export(≥47·≥36) 기준 · 8/3 스냅샷. 07-27주=7/27~8/2.</p></div>
+</div></section>
+
+<section><h2><span class="bar" style="background:var(--teal)"></span>팔로워 추이 <span class="mut">(전월/전주 대비)</span></h2>
+<div style="position:relative;height:210px;margin-bottom:14px"><canvas id="chFollow"></canvas></div>
+<div class="grid2">
+<div><h3>월별 (2026)</h3><table><thead><tr><th class="l">월</th><th>바다</th><th>뉴필</th><th>스켑틱</th></tr></thead><tbody>
+<tr><td class="l">04</td><td>8,595</td><td>9,332</td><td>2,943</td></tr>
+<tr><td class="l">05</td><td>8,598</td><td>9,369</td><td>2,942</td></tr>
+<tr><td class="l">06</td><td>8,759</td><td>10,227</td><td>3,001</td></tr>
+<tr><td class="l">07</td><td>8,785</td><td>10,440</td><td>2,994</td></tr>
+<tr class="sum"><td class="l">08</td><td class="tot">8,806 <span class="up">+21</span></td><td class="tot">10,464 <span class="up">+24</span></td><td class="tot">2,998 <span class="up">+4</span></td></tr></tbody></table></div>
+<div><h3>주별 (월~일)</h3><table><thead><tr><th class="l">주</th><th>바다</th><th>뉴필</th><th>스켑틱</th></tr></thead><tbody>
+<tr><td class="l">07-06</td><td>8,763</td><td>10,316</td><td>3,006</td></tr>
+<tr><td class="l">07-13</td><td>8,765</td><td>10,435</td><td>3,007</td></tr>
+<tr><td class="l">07-20</td><td>8,774</td><td>10,435</td><td>3,007</td></tr>
+<tr class="sum"><td class="l">07-27</td><td class="tot">8,806 <span class="up">+32</span></td><td class="tot">10,464 <span class="up">+29</span></td><td class="tot">2,998 <span class="down">−9</span></td></tr></tbody></table></div>
+</div></section>
+
+<section><h2><span class="bar" style="background:var(--purple)"></span>콘텐츠 TOP — 채널별 <span class="mut">(이번 주 · 좋아요+공유+저장 순)</span></h2>
+<h3>▶ 바다출판사</h3><table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th></tr></thead><tbody>
+<tr><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbSl8CeDPw-/" target="_blank">기후로 보는 한국사 — 영조·정조가 올려다본 하늘</a></td><td>1,347</td><td>59</td><td>3</td><td>16</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbU3MSJDoiI/" target="_blank">지능 파산 — 100년 오르던 IQ가 꺾였다</a></td><td>1,326</td><td>50</td><td>8</td><td>17</td></tr>
+<tr><td class="rank">3</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbczDPXCZ1T/" target="_blank">마일로와 환상요금소 — 신간(100대 명작)</a></td><td>1,005</td><td>26</td><td>0</td><td>11</td></tr></tbody></table>
+<h3>▶ 뉴필로소퍼</h3><table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th></tr></thead><tbody>
+<tr class="hot"><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbU9dS6jqxf/" target="_blank">혼자서도 충분한 사람 (35호)</a></td><td>2,689</td><td>160</td><td>21</td><td>51</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbZjqXNl1qS/" target="_blank">정답 없는 질문을 붙잡아본 게 (정기구독)</a></td><td>2,559</td><td>93</td><td>4</td><td>33</td></tr>
+<tr><td class="rank">3</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbcJkdbl9dz/" target="_blank">지혜에는 체크리스트가 없다 (35호)</a></td><td>1,223</td><td>37</td><td>2</td><td>9</td></tr></tbody></table>
+<h3>▶ 스켑틱</h3><table><thead><tr><th class="rank">#</th><th class="l">제목</th><th>도달</th><th>좋아요</th><th>공유</th><th>저장</th></tr></thead><tbody>
+<tr><td class="rank">1</td><td class="l"><a class="post" href="https://www.instagram.com/p/Dbb9W0RiKD-/" target="_blank">기회가 보이는가 위험이 보이는가 — 정치심리</a></td><td>613</td><td>25</td><td>3</td><td>11</td></tr>
+<tr><td class="rank">2</td><td class="l"><a class="post" href="https://www.instagram.com/p/DbXjGr3ihlj/" target="_blank">핵융합 — 1억 도를 붙잡는 법</a></td><td>284</td><td>14</td><td>0</td><td>2</td></tr></tbody></table></section>
+
+<div class="foot">클로드 기획콘텐츠 대시보드 · 주간 보고 · 2026-08-03 (7/27~8/2 마감)</div>
+</div>
+<script>
+(function(){
+  if(typeof Chart==='undefined')return;
+  var mkl=function(l,d,c){return{label:l,data:d,borderColor:c,backgroundColor:c,tension:.3,borderWidth:2,pointRadius:3,spanGaps:true};};
+  var L=function(id,labels,ds){var e=document.getElementById(id);if(!e)return;
+    new Chart(e,{type:'line',data:{labels:labels,datasets:ds},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}}});};
+  L('chSub',['04','05','06','07','08'],[
+    mkl('뉴필로소퍼',[1524,1584,1993,2074,2122],'#2e5496'),
+    mkl('스켑틱',[1223,1379,1259,1327,1339],'#c55a11')]);
+  L('chFollow',['04','05','06','07','08'],[
+    mkl('바다',[8595,8598,8759,8785,8806],'#1f3864'),
+    mkl('뉴필',[9332,9369,10227,10440,10464],'#2e5496'),
+    mkl('스켑틱',[2943,2942,3001,2994,2998],'#c55a11')]);
+  var se=document.getElementById('chStore');
+  if(se) new Chart(se,{type:'bar',data:{labels:['기후로 보는 한국사','지능 파산','마일로와 환상요금소','하늘과 바람과 별과 인간'],datasets:[
+    {label:'교보',data:[30,4,3,2],backgroundColor:'#2E7D32'},
+    {label:'예스24',data:[24,1,2,0],backgroundColor:'#1565C0'},
+    {label:'알라딘',data:[12,19,8,0],backgroundColor:'#C62828'}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},tooltip:{mode:'index'}},
+      scales:{x:{stacked:true,beginAtZero:true},y:{stacked:true}}}});
+  var bd=document.getElementById('mkBudget');
+  if(bd) new Chart(bd,{type:'bar',data:{labels:['지능 파산','기후','마일로'],datasets:[
+    {label:'예산',data:[3315000,3861000,2314000],backgroundColor:'#1f3864'},
+    {label:'소진',data:[2565862,1606345,1389883],backgroundColor:'#c55a11'},
+    {label:'남은',data:[749138,2254655,924117],backgroundColor:'#2e7d6b'}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},title:{display:true,text:'예산 · 소진 · 남은 (원)',font:{size:12}}},
+      scales:{y:{beginAtZero:true,ticks:{callback:function(v){return (v/10000)+'만';}}}}}});
+  var pr=document.getElementById('mkPer');
+  if(pr) new Chart(pr,{type:'bar',data:{labels:['지능 파산','기후','마일로'],datasets:[
+    {label:'권당 마케팅비',data:[6579,10167,47927],backgroundColor:['#2e7d6b','#2e7d6b','#c00000']},
+    {label:'권당 공급가',data:[11050,12870,11570],backgroundColor:'#cdd4df'}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},title:{display:true,text:'권당 마케팅비 vs 공급가 (원)',font:{size:12}}},
+      scales:{y:{beginAtZero:true,ticks:{callback:function(v){return v.toLocaleString();}}}}}});
+  var C3=['#1f3864','#2e5496','#c55a11'];
+  function miniBar(id,labels,data,colors,fmt){
+    var e=document.getElementById(id);if(!e)return;
+    new Chart(e,{type:'bar',data:{labels:labels,datasets:[{data:data,backgroundColor:colors,borderRadius:3,maxBarThickness:24}]},
+      options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:15}},
+        plugins:{legend:{display:false},tooltip:{enabled:false}},
+        scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{display:false,beginAtZero:true,grace:'25%'}}},
+      plugins:[{id:'vl_'+id,afterDatasetsDraw:function(c){var x=c.ctx;c.getDatasetMeta(0).data.forEach(function(b,i){var v=data[i];x.fillStyle='#1a2233';x.font='700 10px "Malgun Gothic",sans-serif';x.textAlign='center';x.fillText(fmt?fmt(v):v.toLocaleString(),b.x,b.y-5);});}}]});
+  }
+  miniBar('mkF',['바다','뉴필','스켑틱'],[8806,10464,2998],C3);
+  miniBar('mkS',['뉴필','스켑틱'],[2122,1339],['#2e5496','#c55a11']);
+  miniBar('mkP',['바다','뉴필','스켑틱'],[13,3,2],C3);
+  miniBar('mkE',['바다','뉴필','스켑틱'],[2.2,2.5,2.5],C3,function(v){return v+'%';});
+  miniBar('mkA',['바다','뉴필','스켑틱'],[695651,0,0],C3,function(v){return Math.round(v/10000)+'만';});
+})();
+</script>
+</body></html>
