@@ -49,7 +49,7 @@ a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1} a.po
 
 <section><h2><span class="bar" style="background:var(--amber)"></span><span class="c-ad">주요도서 마케팅 예산 플랜</span> <span class="mut">(발매 후 누적 · 예산=목표부수 기준)</span></h2>
 <table><thead><tr><th class="l">도서</th><th>목표부수</th><th>마케팅율</th><th>예산</th><th>소진</th><th>남은</th><th>소진율</th><th>누적판매</th><th>권당비용</th></tr></thead>
-<tbody><tr><td class="l">지능 파산</td><td>3,000</td><td>10%</td><td>3,315,000</td><td>2,764,954</td><td>550,046</td><td>83.4%</td><td>2,224</td><td>1,243</td></tr><tr><td class="l">기후로 보는 한국사</td><td>10,000</td><td>10%</td><td>12,870,000</td><td>5,763,367</td><td>7,106,633</td><td>44.8%</td><td>3,303</td><td>1,745</td></tr><tr><td class="l">마일로와 환상요금소</td><td>5,000</td><td>10%</td><td>5,785,000</td><td>2,654,833</td><td>3,130,167</td><td>45.9%</td><td>2,373</td><td>1,119</td></tr><tr><td class="l">도덕이란 무엇인가</td><td>1,000</td><td>10%</td><td>2,660,000</td><td>2,483,026</td><td>176,974</td><td>93.3%</td><td>830</td><td>2,992</td></tr><tr class="sum"><td class="l">합계</td><td>–</td><td>–</td><td class="tot">24,630,000</td><td class="tot">13,666,180</td><td>10,963,820</td><td>55.5%</td><td>8,730</td><td>1,565</td></tr></tbody></table>
+<tbody><tr><td class="l">지능 파산</td><td>3,000</td><td>10%</td><td>3,315,000</td><td>2,764,954</td><td>550,046</td><td>83.4%</td><td>2,224</td><td>1,243</td></tr><tr><td class="l">기후로 보는 한국사</td><td>5,000</td><td>10%</td><td>6,435,000</td><td>5,763,367</td><td>671,633</td><td>89.6%</td><td>3,303</td><td>1,745</td></tr><tr><td class="l">마일로와 환상요금소</td><td>5,000</td><td>10%</td><td>5,785,000</td><td>2,654,833</td><td>3,130,167</td><td>45.9%</td><td>2,373</td><td>1,119</td></tr><tr><td class="l">도덕이란 무엇인가</td><td>1,000</td><td>10%</td><td>2,660,000</td><td>2,483,026</td><td>176,974</td><td>93.3%</td><td>830</td><td>2,992</td></tr><tr class="sum"><td class="l">합계</td><td>–</td><td>–</td><td class="tot">18,195,000</td><td class="tot">13,666,180</td><td>4,528,820</td><td>75.1%</td><td>8,730</td><td>1,565</td></tr></tbody></table>
 <div class="grid2" style="margin-top:12px">
 <div style="position:relative;height:230px"><canvas id="mktBudget"></canvas></div>
 <div style="position:relative;height:230px"><canvas id="mktPer"></canvas></div></div>
@@ -141,9 +141,9 @@ a.post{color:#0563c1;text-decoration:none;border-bottom:1px dotted #0563c1} a.po
   sbar('monthStore',["하바별인10만기념", "기후", "NP36", "지능파산", "스켑틱47", "마일로", "도덕", "종목선정"],[313, 239, 52, 165, 68, 163, 104, 31],[77, 49, 73, 47, 83, 47, 13, 11],[42, 31, 156, 39, 99, 35, 29, 10]);
   var mb=document.getElementById('mktBudget');
   if(mb) new Chart(mb,{type:'bar',data:{labels:["지능 파산", "기후로 보는 한국사", "마일로와 환상요금소", "도덕이란 무엇인가"],datasets:[
-    {label:'예산',data:[3315000, 12870000, 5785000, 2660000],backgroundColor:'#1f3864'},
+    {label:'예산',data:[3315000, 6435000, 5785000, 2660000],backgroundColor:'#1f3864'},
     {label:'소진',data:[2764954, 5763367, 2654833, 2483026],backgroundColor:'#c55a11'},
-    {label:'남은',data:[550046, 7106633, 3130167, 176974],backgroundColor:'#2e7d6b'}]},
+    {label:'남은',data:[550046, 671633, 3130167, 176974],backgroundColor:'#2e7d6b'}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}},title:{display:true,text:'예산·소진·남은(원)',font:{size:12}}},scales:{y:{beginAtZero:true,ticks:{callback:function(v){return (v/10000)+'만';}}}}}});
   var mp=document.getElementById('mktPer');
   if(mp) new Chart(mp,{type:'bar',data:{labels:["지능 파산", "기후로 보는 한국사", "마일로와 환상요금소", "도덕이란 무엇인가"],datasets:[
