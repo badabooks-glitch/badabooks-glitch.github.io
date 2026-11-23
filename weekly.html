@@ -165,6 +165,8 @@ h3{font-size:12.5px;color:var(--blue);margin:14px 0 6px}
 <div style="position:relative;height:210px;margin-bottom:14px"><canvas id="chFollow"></canvas></div>
 <div class="grid2">
 <div><h3>월별 (2026)</h3><table><thead><tr><th class="l">월</th><th>바다</th><th>뉴필</th><th>스켑틱</th></tr></thead><tbody>
+<tr><td class='l'>04</td><td>8,595</td><td>9,332</td><td>2,943</td></tr>
+<tr><td class='l'>05</td><td>8,598</td><td>9,369</td><td>2,942</td></tr>
 <tr><td class='l'>06</td><td>8,759</td><td>10,227</td><td>3,001</td></tr>
 <tr><td class='l'>07</td><td>8,785</td><td>10,440</td><td>2,994</td></tr>
 <tr><td class='l'>08</td><td>8,934</td><td>10,621</td><td>3,004</td></tr>
@@ -203,10 +205,10 @@ h3{font-size:12.5px;color:var(--blue);margin:14px 0 6px}
   L('chSub',["05", "06", "07", "08", "09", "10", "11"],[
     mkl('뉴필로소퍼',[1584, 1993, 2074, 2187, 2273, 1564, 1670],'#2e5496'),
     mkl('스켑틱',[1379, 1259, 1327, 1377, 1650, 1716, 1763],'#c55a11')]);
-  L('chFollow',["06", "07", "08", "09", "10", "11*"],[
-    mkl('바다',[8759, 8785, 8934, 8954, 8942, 8976],'#1f3864'),
-    mkl('뉴필',[10227, 10440, 10621, 10712, 10832, 10859],'#2e5496'),
-    mkl('스켑틱',[3001, 2994, 3004, 3114, 3115, 3127],'#c55a11')]);
+  L('chFollow',["04", "05", "06", "07", "08", "09", "10", "11*"],[
+    mkl('바다',[8595, 8598, 8759, 8785, 8934, 8954, 8942, 8976],'#1f3864'),
+    mkl('뉴필',[9332, 9369, 10227, 10440, 10621, 10712, 10832, 10859],'#2e5496'),
+    mkl('스켑틱',[2943, 2942, 3001, 2994, 3004, 3114, 3115, 3127],'#c55a11')]);
   var se=document.getElementById('chStore');
   if(se) new Chart(se,{type:'bar',data:{labels:["\ud558\ub298\uacfc \ubc14\ub78c\uacfc \ubcc4\uacfc \uc778\uac04 10\ub9cc \ubd80 \uae30\ub150\ud310", "\uae30\ud6c4\ub85c \ubcf4\ub294 \ud55c\uad6d\uc0ac", "\ud53c\ud3ed\ub41c \uc870\uc120", "\uc9c0\ub2a5 \ud30c\uc0b0", "\ub9c8\uc77c\ub85c\uc640 \ud658\uc0c1\uc694\uae08\uc18c", "\uc0b4\uba74\uc11c \ud55c \ubc88\uc740 \ubd80\ucc98\ub97c \ub9cc\ub098\uc57c \ud560 \ub54c\uac00 \uc628\ub2e4"],datasets:[
     {label:'교보',data:[211, 195, 84, 82, 94, 57],backgroundColor:'#2E7D32'},
